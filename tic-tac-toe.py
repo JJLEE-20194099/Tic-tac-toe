@@ -62,4 +62,10 @@ class State:
             return self.end
         self.end = False
         return self.end
+    
+    def next_state(self, i, j, symbol):
+        new_state = State()
+        new_state.data = np.copy(self.data)
+        new_state.data[i][j] = symbol
+        return new_state
         
