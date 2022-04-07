@@ -1,0 +1,1 @@
+This is a project about how i learn to build tic tac toe by Reinforcement Learning
