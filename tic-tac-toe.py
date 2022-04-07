@@ -66,6 +66,21 @@ class State:
     def next_state(self, i, j, symbol):
         new_state = State()
         new_state.data = np.copy(self.data)
-        new_state.data[i][j] = symbol
+        new_state.data[i, j] = symbol
         return new_state
         
+    def print_state(self):
+        for i in range(BOARD_ROWS):
+            print('-------------')
+            out = '|'
+            for j in range(BOARD_COLS):
+                if (self.data[i, j] == 1):
+                    tocken = '*'
+                elif self.data[i, j] == -1:
+                    tocken = 'X'
+                
+                else:
+                    tocken = '0'
+                out += tocken + ' | '
+            print(out)
+        print('-------------')
